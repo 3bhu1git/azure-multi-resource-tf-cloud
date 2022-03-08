@@ -9,8 +9,6 @@ terraform {
 
 provider "azurerm" {
   features { }
-  subscription_id = var.subscription_id
-  tenant_id       = var.tenant_id
 }
 
 resource "azurerm_resource_group" "test1" {
@@ -44,7 +42,7 @@ resource "azurerm_network_interface" "test1" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "test1" {
+resource "azurerm_linux_virtual_machine" "Vm2" {
   name                = "test1-machine"
   resource_group_name = azurerm_resource_group.test1.name
   location            = azurerm_resource_group.test1.location
